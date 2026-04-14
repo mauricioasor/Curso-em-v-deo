@@ -35,7 +35,7 @@
 
             }else{
                 $this->setStatus(false);
-                echo "<p>Conta fechada com sucesso!</p>";
+                echo "<p>Conta " . $this->getDono() . " fechada com sucesso!</p>";
                
             }
         }
@@ -68,10 +68,10 @@
                 $v = 0;   
             if($this->getTipo() == "CC"){
                 $v = 15;
-                echo "<p>Mensalidade paga R$ $v sua conta é conta corrente.</p>";
+                echo "<p>Mensalidade paga no valor de R$ $v, pois a sua conta é conta corrente.</p>";
             } elseif ($this->getTipo() == "CP"){
                 $v = 20;
-                echo "<p>Mensalidade paga R$ $v sua conta é conta poupança.</p>";
+                echo "<p>Mensalidade paga no valor de R$ $v, pois a sua conta é conta poupança.</p>";
             }
             if($this->getStatus()){
                 if($this->getSaldo() >= $v){
