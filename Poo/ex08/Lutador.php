@@ -44,7 +44,13 @@
             $this->setVitorias($this->getVitorias() + 1);
         }
         public function perderLuta(){
-            $this->setDerrotas($this->getDerrotas() - 1);
+                $this->setDerrotas($this->getDerrotas() - 1);
+                // if ($this->getDerrotas() === 0){
+                //         $this->setDerrotas($this->getDerrotas() + 1);
+                // } elseif ($this->getDerrotas() > 0){
+                //         $this->setDerrotas($this->getDerrotas() - 1);
+                // }
+            
         }
         public function empatarLuta(){
             $this->setEmpates($this->getEmpates() + 1);   
