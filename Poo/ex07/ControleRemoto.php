@@ -17,13 +17,15 @@
 
         public function ligar(){
             $this->setLigado(true);
-            echo "TV ligada";
+            echo "<p>|-- TV LIGADA --|</p>";
+    
             echo "<br>";
         }
         public function desligar(){
             $this->setLigado(false);
         }
         public function abrirMenu(){
+            echo "<p>----- MENU ----- </p>";
             echo "<p>Esta ligado?: " . ($this->getLigado() ? "SIM" : "NÃO") . "</p>";    
             echo "<p>Esta trocando?: " . ($this->getTocando() ? "SIM" : "NÃO") . "</p>";            
             echo "Volume: " . $this->getVolume() . "";
@@ -37,12 +39,16 @@
         }
         public function maisVolume(){
             if ($this->getLigado()){
-                $this->setVolume($this->getVolume() + 1);
+                $this->setVolume($this->getVolume() + 10);
+            } else {
+                echo "<p>Erro! Não posso aumentar o voalume</p>";
             }
         }
         public function menosVolume(){
             if ($this->getLigado()){
                 $this->setVolume($this->getVolume() - 1);
+            } else {
+                echo "<p>Erro! Não posso deminuir o voalume</p>";
             }
         }
         public function ligarMudo(){
